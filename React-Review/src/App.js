@@ -1,20 +1,21 @@
-import { Route, Routes } from 'react-router-dom'
-import AllMeetups from './pages/AllMeetups'
-import Favorites from './pages/Favorites'
-import NewMeetups from './pages/NewMeetups'
-import MainNavigation from './components/layout/MainNavigation'
+import { Route, Routes } from "react-router-dom";
+import AllMeetups from "./pages/AllMeetups";
+import Favorites from "./pages/Favorites";
+import NewMeetups from "./pages/NewMeetups";
+import Layout from "./components/layout/Layout";
 
 function App() {
-	return (
-		<>
-			<MainNavigation />
-			<Routes>
-				<Route path='/' element={<AllMeetups />} />
-				<Route path='/new-meetup' element={<NewMeetups />} />
-				<Route path='/favorites' element={<Favorites />} />
-			</Routes>
-		</>
-	)
+  return (
+    <>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<AllMeetups />} />
+          <Route path="/new-meetup" element={<NewMeetups />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </Layout>
+    </>
+  );
 }
 
-export default App
+export default App;
