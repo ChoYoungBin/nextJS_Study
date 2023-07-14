@@ -1,13 +1,24 @@
-import { Inter } from 'next/font/google'
+import Link from "next/link";
 
-const inter = Inter({ subsets: ['latin'] })
+const HomePage = () => {
+  return (
+    <>
+      <div>
+        <h1>The HomePage</h1>
+        <ul>
+          <li>
+            <Link href="/portfolio">portfolio</Link>
+          </li>
+          <li>
+            <Link href="/clients">clients</Link>
+          </li>
+          <li>
+            <Link href="/about">about</Link>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
 
-export default function Home() {
-	return (
-		<>
-			<div>
-				<h1>Hello nextJS!</h1>
-			</div>
-		</>
-	)
-}
+export default HomePage;
