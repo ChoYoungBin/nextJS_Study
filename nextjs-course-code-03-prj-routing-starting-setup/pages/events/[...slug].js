@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
-const SlugPage = () => {
+const FilteredEventsPage = () => {
 	const router = useRouter()
 
 	return (
 		<>
-			<h1>SlugPage</h1>
+			<h1>FilteredEventsPage</h1>
 		</>
 	)
 }
 
-export default SlugPage
+export default FilteredEventsPage
