@@ -1,19 +1,23 @@
-import { useRouter } from 'next/router'
+import { getAllEvents } from "../../dummy-data";
+import { useRouter } from "next/router";
+import EventList from "../../components/events/event-list";
+import EventSearch from "../../components/events/events-search";
 const AllEventPage = () => {
-	const router = useRouter()
-	const detailHandler = () => {
-		router.push({
-			pathname: '/events/[id]',
-			query: { id: '조영빈' },
-		})
-	}
-	return (
-		<>
-			<div>
-				<h1>AllEventPage</h1>
-				<button onClick={detailHandler}>영빈 detail</button>
-			</div>
-		</>
-	)
-}
-export default AllEventPage
+  const events = getAllEvents();
+  const router = useRouter();
+  const onSearchHandler = (year, month) => {
+    const fullPath = `/events/${year}/${month}`;
+
+    router.push(fullPath);
+  };
+
+  return (
+    <>
+      <div>
+        <EventSearch onSearch={onSearchHandler} />
+        <EventList items={events} />
+      </div>
+    </>
+  );
+};
+export default AllEventPage;
