@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { getFilteredEvents } from "../../dummy-data";
 import EventList from "../../components/events/event-list";
-import RenderResult from "next/dist/server/render-result";
 import ResultsTitle from "../../components/results-title/results-title";
 
 const FilteredEventsPage = () => {
