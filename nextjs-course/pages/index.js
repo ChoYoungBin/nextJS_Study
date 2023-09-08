@@ -1,6 +1,7 @@
 import Link from "next/link";
 import fs from "fs/promises";
 import path from "path";
+import Head from "next/head";
 
 const HomePage = (props) => {
   const { products } = props;
@@ -8,6 +9,13 @@ const HomePage = (props) => {
   return (
     <>
       <div>
+        <Head>
+          <title>NextJS Events</title>
+          <meta
+            name="description"
+            content="Find a lot of greate events that  allow you to evolve.."
+          />
+        </Head>
         <h1>The HomePage</h1>
         {/* <ul>
           <li>
